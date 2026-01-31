@@ -74,4 +74,4 @@
 
 ```bash
 pip install -r requirements.txt
-jupyter notebook CNN_Assignment.ipynb
+jupyter notebook main.ipynb
