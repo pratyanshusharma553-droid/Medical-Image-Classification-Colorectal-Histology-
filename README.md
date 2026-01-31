@@ -1,100 +1,77 @@
-🧠 Colorectal Histology Image Classification using CNNs
+# 🧠 Medical Image Classification with CNNs
 
-This project explores deep learning approaches for multi-class medical image classification using colorectal histology images. It compares a custom-built Convolutional Neural Network (CNN) with a transfer learning model based on ResNet50 to analyze performance, convergence behavior, and model complexity.
+> Deep learning project exploring custom convolutional networks and transfer learning for multi-class histology image classification.
 
-📌 Project Overview
+---
 
-The goal is to classify histology images into 8 tissue categories using convolutional neural networks. Two strategies were evaluated:
+## 🌟 **PROJECT HIGHLIGHTS**
 
-Custom CNN trained from scratch
+- 🚀 Built and trained a **custom CNN architecture** from scratch  
+- 🔁 Applied **transfer learning** using a pretrained ResNet50 model  
+- 🧩 Used **Global Average Pooling** to reduce overfitting and model size  
+- 🎯 Performed **fine-tuning** to adapt pretrained features to a new domain  
+- 📊 Evaluated models using multiple **classification metrics**  
+- 📈 Visualized performance with **confusion matrices and training curves**
 
-Transfer Learning using a pretrained ResNet50 model with fine-tuning
+---
 
-Both models use Global Average Pooling (GAP) to reduce overfitting and improve generalization.
+## 📂 **DATASET OVERVIEW**
 
-🗂 Dataset
+| Property | Value |
+|---------|-------|
+| Categories | 8 tissue classes |
+| Total Images | ~5,000 |
+| Train/Test Split | 90% / 10% |
+| Image Size | 224 × 224 × 3 |
 
-Name: Colorectal Histology
+---
 
-Classes: 8 tissue types
+## 🏗 **MODEL APPROACHES**
 
-Total Images: 5,000
+### 🔹 Custom Convolutional Neural Network
+- Convolution + pooling layers  
+- Global Average Pooling  
+- Softmax classification head  
 
-Train/Test Split: 90% / 10%
+### 🔹 Transfer Learning Model
+- Pretrained ResNet50 backbone  
+- Initial feature extraction (frozen layers)  
+- Fine-tuning of higher-level layers  
+- GAP + Dense classifier  
 
-Image Size: 224 × 224 × 3
+---
 
-Source: TensorFlow Datasets
+## 📊 **PERFORMANCE SUMMARY**
 
-🏗 Models Implemented
-🔹 Custom CNN
+| Model | Accuracy | Precision | Recall | F1 Score |
+|------|----------|-----------|--------|----------|
+| 🧠 Custom CNN | **0.73** | 0.75 | 0.73 | 0.72 |
+| 🔁 ResNet50 (Fine-tuned) | 0.55 | 0.59 | 0.55 | 0.52 |
 
-Multiple Conv2D + Pooling layers
+---
 
-Global Average Pooling
+## 📈 **EVALUATION STRATEGY**
 
-Softmax classifier
+✔ Accuracy  
+✔ Macro Precision  
+✔ Macro Recall  
+✔ Macro F1-score  
+✔ Confusion Matrix  
 
-🔹 Transfer Learning (ResNet50)
+---
 
-Pretrained on ImageNet
+## 🛠 **TECH STACK**
 
-Base layers frozen initially
+- TensorFlow / Keras  
+- NumPy  
+- Matplotlib  
+- Scikit-learn  
+- TensorFlow Datasets  
 
-Top layers fine-tuned
+---
 
-GAP + Dense classification head
+## ▶️ **HOW TO RUN**
 
-📊 Results Summary
-Model	Accuracy	Precision	Recall	F1 Score
-Custom CNN	0.73	0.75	0.73	0.72
-ResNet50 (Fine-tuned)	0.55	0.59	0.55	0.52
-🔍 Key Observations
-
-The custom CNN achieved higher accuracy on this dataset.
-
-Transfer learning improved after fine-tuning but remained below the custom model.
-
-GAP helped both models generalize by reducing parameter count.
-
-Deeper models required more computation but did not always guarantee better performance.
-
-📈 Evaluation Metrics
-
-Performance was evaluated using:
-
-Accuracy
-
-Precision (macro)
-
-Recall (macro)
-
-F1-score (macro)
-
-Confusion Matrix visualization
-
-🛠 Tech Stack
-
-TensorFlow / Keras
-
-NumPy
-
-Matplotlib
-
-Scikit-learn
-
-TensorFlow Datasets
-
-▶️ How to Run
+```bash
 pip install -r requirements.txt
-jupyter notebook main.ipynb
-
-📌 Future Improvements
-
-Data augmentation for better generalization
-
-Class imbalance handling
-
-Experimenting with other architectures (EfficientNet, DenseNet)
-
-Hyperparameter tuning
+jupyter notebook CNN_Assignment.ipynb
